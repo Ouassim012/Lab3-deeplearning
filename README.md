@@ -1,30 +1,46 @@
-# NLP-Lab4
-The main purpose behind this lab is to get familiar with NLP language models.
+# Lab4
+The main purpose behind this lab is to get familiar with Pytorch, to build deep
+neural network architecture for Natural language process by using Sequence Models.
 
 ## Part 1
 
 This project aims to build and evaluate language models for classifying and regressing medical text data obtained from Arabic websites. The process involves web scraping, preprocessing, training various recurrent neural network (RNN) architectures, and evaluating model performance.
 
 ### Data Collection
-
-We obtained text data from [Webteb](https://www.webteb.com/neurology/diseases), a website focusing on medical information. Using web scraping libraries like BeautifulSoup, we collected information about various diseases in Arabic language from the neurology section.
+The text data was sourced from [Webteb](https://www.webteb.com/neurology/diseases), a medical website offering information on neurological diseases in Arabic. We utilized web scraping tools like BeautifulSoup to extract relevant content from the neurology section.
 
 ### Text Scoring
 
-We assigned scores to each text based on its relevance to the medical field. A rule-based scoring function was developed, assigning points depending on the presence of specific medical terms and keywords related to neurology.
+A comprehensive preprocessing pipeline was designed to clean and prepare the dataset for model training. The pipeline includes:
 
-### Preprocessing Pipeline
-
-A preprocessing pipeline was established to clean and prepare the collected dataset for training. This pipeline includes tokenization, stemming, lemmatization, removal of stop words, and discretization.
+Tokenization: Splitting text into individual words or tokens.
+Stemming and Lemmatization: Reducing words to their root or base forms.
+Stop Word Removal: Eliminating non-informative words.
+Discretization: Converting continuous variables into categorical representations.
 
 ### Model Training
 
-We trained four different recurrent neural network (RNN) architectures: Simple RNN, Bidirectional RNN, GRU (Gated Recurrent Unit), and LSTM (Long Short-Term Memory). Hyperparameters were tuned to optimize model performance.
+Model Training
+We trained and compared the performance of four recurrent neural network (RNN) architectures:
+
+Simple RNN: A basic recurrent network.
+Bidirectional RNN: Processes input in both forward and backward directions.
+GRU (Gated Recurrent Unit): A simplified version of LSTM with fewer parameters.
+LSTM (Long Short-Term Memory): Designed to capture long-range dependencies in sequential data.
+Hyperparameter tuning was performed to enhance model efficiency and performance.
 
 ### Model Evaluation
 
-The trained models were evaluated using standard metrics such as loss and mean absolute error (MAE). Additionally, we computed the BLEU score, a metric commonly used in natural language processing tasks to evaluate the quality of generated text.
+The models were evaluated using the following metrics:
+
+Loss: Measures the prediction error during training.
+Mean Absolute Error (MAE): Quantifies the difference between predicted and actual values.
+BLEU Score: Used to assess the quality of generated text compared to reference text, commonly applied in NLP tasks.
+
+### Results and insights
+
+Among the tested architectures, the Bidirectional RNN exhibited the best overall performance, delivering superior accuracy and lower error rates. While these results are promising, additional experimentation and hyperparameter adjustments could further optimize model performance.
 
 ### Conclusion
 
-The evaluation results indicate that the Bidirectional RNN model achieved the best performance among the tested architectures. However, further experimentation and fine-tuning of hyperparameters may be necessary to improve model accuracy. Overall, this project demonstrates the feasibility of using deep learning techniques for analyzing medical text data in Arabic language.
+This project successfully demonstrates the potential of RNN-based deep learning models for processing and analyzing Arabic medical text. The workflow from data collection to evaluation provides a robust framework for tackling similar NLP tasks, with room for future enhancements and exploration.
